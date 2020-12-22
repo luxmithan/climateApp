@@ -1,0 +1,104 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input
+    type="hidden"
+    name="climateDetailId"
+    [value]="service.formData.climateDetailId"
+  />
+  <div class="form-group">
+    <label>Name des Klimas</label>
+    <input
+      class="form-control form-control-lg"
+      placeholder="Name des Klimas"
+      name="climateName"
+      #climateName="ngModel"
+      [(ngModel)]="service.formData.climateName"
+      required
+      [class.invalid]="climateName.invalid &#038;&#038; climateName.touched"
+    />
+  </div>
+  <div class="form-group">
+    <label>Globalstrahlung</label>
+    <input
+      class="form-control form-control-lg"
+      type="number"
+      maxlength="3"
+      placeholder="Globalstrahlung in W/m2"
+      name="globalRadiation"
+      #globalRadiation="ngModel"
+      [(ngModel)]="service.formData.globalRadiation"
+      required
+      [class.invalid]="globalRadiation.invalid &#038;&#038; globalRadiation.touched"
+    />
+  </div>
+  <h3>Aussenklima</h3>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>Temperatur</label>
+      <input
+        class="form-control form-control-lg"
+        type="number"
+        maxlength="3"
+        placeholder="Temperatur in C°"
+        name="outTemp"
+        #outTemp="ngModel"
+        [(ngModel)]="service.formData.outTemp"
+        required
+        [class.invalid]="outTemp.invalid &#038;&#038; outTemp.touched"
+      />
+    </div>
+    <div class="form-group col-md-7">
+      <label>Wärmeübergangskoeffizient</label>
+      <input
+        class="form-control form-control-lg"
+        type="number"
+        maxlength="3"
+        placeholder="Wärmeübergangskeffizient in W/m2k"
+        name="outCoefficient"
+        #outCoefficient="ngModel"
+        [(ngModel)]="service.formData.outCoefficient"
+        required
+        [class.invalid]="outCoefficient.invalid &#038;&#038; outCoefficient.touched"
+      />
+    </div>
+  </div>
+  <h3>Innenklima</h3>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>Temperatur</label>
+      <input
+        class="form-control form-control-lg"
+        type="number"
+        maxlength="3"
+        placeholder="Temperatur in C°"
+        name="inTemp"
+        #inTemp="ngModel"
+        [(ngModel)]="service.formData.inTemp"
+        required
+        [class.invalid]="inTemp.invalid &#038;&#038; inTemp.touched"
+      />
+    </div>
+    <div class="form-group col-md-7">
+      <label>Wärmeübergangskoeffizient</label>
+      <input
+        class="form-control form-control-lg"
+        type="number"
+        maxlength="3"
+        placeholder="Wärmeübergangskeffizient in W/m2k"
+        name="inCoefficient"
+        #inCoefficient="ngModel"
+        [(ngModel)]="service.formData.inCoefficient"
+        required
+        [class.invalid]="inCoefficient.invalid &#038;&#038; inCoefficient.touched"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      class="btn btn-primary btn-lg btn-block"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      SUBMIT
+    </button>
+  </div>
+</form>

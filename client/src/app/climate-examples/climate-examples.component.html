@@ -1,0 +1,33 @@
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th class="rotate-text">
+        <div><span>Name</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>E_s</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>Te</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>Ti</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>h_ce</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>h_ci</span></div>
+      </th>
+      <th class="rotate-text"></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let cd of exampleList">
+    <td>{{ cd.climateName }}</td>
+    <td>{{ cd.globalRadiation }} W/m2</td>
+    <td>{{ cd.outTemp }} °C</td>
+    <td>{{ cd.inTemp }} °C</td>
+    <td>{{ cd.outCoefficient }} W/m2K</td>
+    <td>{{ cd.inCoefficient }} W/m2K</td>
+  </tr>
+</table>

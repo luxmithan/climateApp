@@ -1,0 +1,41 @@
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th class="rotate-text">
+        <div><span>Name</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>E_s</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>Te</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>Ti</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>h_ce</span></div>
+      </th>
+      <th class="rotate-text">
+        <div><span>h_ci</span></div>
+      </th>
+      <th class="rotate-text"></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let cd of service.list">
+    <td (click)="populateForm(cd)">{{ cd.climateName }}</td>
+    <td (click)="populateForm(cd)">{{ cd.globalRadiation }} W/m2</td>
+    <td (click)="populateForm(cd)">{{ cd.outTemp }} °C</td>
+    <td (click)="populateForm(cd)">{{ cd.inTemp }} °C</td>
+    <td (click)="populateForm(cd)">{{ cd.outCoefficient }} W/m2K</td>
+    <td (click)="populateForm(cd)">{{ cd.inCoefficient }} W/m2K</td>
+    <td>
+      <button class="btn btn-primary">
+        <i
+          class="far fa-trash-alt fa-lg text"
+          (click)="onDelete(cd.climateDetailId)"
+        ></i>
+      </button>
+    </td>
+  </tr>
+</table>
